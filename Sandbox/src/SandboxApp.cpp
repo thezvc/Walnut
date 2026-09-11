@@ -8,9 +8,7 @@ public:
     ~SandBox(){}
 };
 
-int main()
+Walnut::Application* Walnut::CreateApplication()
 {
-    SandBox* sandbox = new SandBox();
-    sandbox->Run();
-    delete sandbox;
+    return new SandBox();
 }

@@ -17,9 +17,11 @@ elseif(MSVC)
 endif()
 
 add_library(Walnut SHARED
+    src/Walnut.h
     src/Walnut/Core.h
-    src/Walnut/Application.cpp
     src/Walnut/Application.h
+    src/Walnut/Application.cpp
+    src/Walnut/EntryPoint.h
 )
 
 target_include_directories(Walnut PUBLIC src)

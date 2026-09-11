@@ -12,4 +12,7 @@ namespace Walnut {
 
     };
 
+    // To be defined in CLIENT
+    Application* CreateApplication();
+
 }
