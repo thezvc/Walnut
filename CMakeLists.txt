@@ -22,9 +22,15 @@ add_library(Walnut SHARED
     src/Walnut/Application.h
     src/Walnut/Application.cpp
     src/Walnut/EntryPoint.h
+    src/Walnut/Log.h
+    src/Walnut/Log.cpp
 )
 
-target_include_directories(Walnut PUBLIC src)
+target_include_directories(Walnut 
+    PUBLIC 
+        src
+        src/vendor/spdlog/include
+)
 
 target_compile_definitions(Walnut
     PUBLIC
