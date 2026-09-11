@@ -29,7 +29,7 @@ add_library(Walnut SHARED
 target_include_directories(Walnut 
     PUBLIC 
         src
-        src/vendor/spdlog/include
+        vendor/include
 )
 
 target_compile_definitions(Walnut
