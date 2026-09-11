@@ -9,12 +9,13 @@ extern Walnut::Application* Walnut::CreateApplication();
 
 int main(int argc, char** argv)
 {
-    Walnut::Log::Init();
-    Walnut::Log::GetCoreLogger()->warn("Initialized Log!");
-    Walnut::Log::GetClientLogger()->info("Hello!");
-
     (void)argc;
     (void)argv;
+    
+    int a=5;
+    Walnut::Log::Init();
+    WN_CORE_WARN("Initialized Log!");
+    WN_INFO("Hello! var={0}", a);
 
     auto app = Walnut::CreateApplication();
     app->Run();
