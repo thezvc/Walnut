@@ -17,6 +17,8 @@ elseif(MSVC)
 endif()
 
 add_library(Walnut SHARED
+    src/wnpch.h
+    src/wnpch.cpp
     src/Walnut.h
     src/Walnut/Core.h
     src/Walnut/Application.h
@@ -29,6 +31,8 @@ add_library(Walnut SHARED
     src/Walnut/Events/KeyEvent.h
     src/Walnut/Events/MouseEvent.h
 )
+
+target_precompile_headers(Walnut PRIVATE src/wnpch.h)
 
 target_include_directories(Walnut 
     PUBLIC 

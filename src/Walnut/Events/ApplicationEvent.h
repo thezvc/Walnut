@@ -2,8 +2,6 @@
 
 #include "Event.h"
 
-#include <sstream>
-
 namespace Walnut {
 
 	class WALNUT_API WindowResizeEvent : public Event
