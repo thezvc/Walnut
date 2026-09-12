@@ -1,9 +1,12 @@
 #pragma once
 
+#define SPDLOG_FMT_OPTIONAL_INC
+
 #include "Walnut/Core.h"
 #include <memory>
 #include <spdlog/spdlog.h>
-#include "spdlog/fmt/ostr.h"
+#include <spdlog/fmt/fmt.h>
+#include <spdlog/fmt/ostr.h>
 
 namespace Walnut {
 

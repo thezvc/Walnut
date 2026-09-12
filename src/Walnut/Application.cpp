@@ -1,7 +1,7 @@
 #include "Application.h"
 
-#include "Walnut/Events/ApplicationEvent.h"
 #include "Walnut/Log.h"
+#include "Walnut/Events/ApplicationEvent.h"
 
 namespace Walnut {
 

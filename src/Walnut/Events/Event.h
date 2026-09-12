@@ -4,6 +4,7 @@
 
 #include <string>
 #include <functional>
+#include <spdlog/fmt/fmt.h>
 
 namespace Walnut {
 
@@ -82,3 +83,10 @@ namespace Walnut {
 		return os << e.ToString();
 	}
 }
+
+template <typename T>
+struct fmt::formatter<T, std::enable_if_t<std::is_base_of_v<Walnut::Event, T>, char>> : fmt::formatter<std::string> {
+    auto format(const Walnut::Event& e, format_context& ctx) const {
+        return fmt::formatter<std::string>::format(e.ToString(), ctx);
+    }
+};
