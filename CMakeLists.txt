@@ -24,10 +24,10 @@ add_library(Walnut SHARED
     src/Walnut/EntryPoint.h
     src/Walnut/Log.h
     src/Walnut/Log.cpp
-    src/Walnut/Event/Event.h
-    src/Walnut/Event/ApplicationEvent.h
-    src/Walnut/Event/KeyEvent.h
-    src/Walnut/Event/MouseEvent.h
+    src/Walnut/Events/Event.h
+    src/Walnut/Events/ApplicationEvent.h
+    src/Walnut/Events/KeyEvent.h
+    src/Walnut/Events/MouseEvent.h
 )
 
 target_include_directories(Walnut 
