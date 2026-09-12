@@ -2,8 +2,10 @@
 
 #include "Core.h"
 #include "Events/Event.h"
+#include "Window.h"
 
 namespace Walnut {
+
     class WALNUT_API Application {
     public:
         Application();
@@ -11,6 +13,9 @@ namespace Walnut {
 
         void Run();
 
+        private:
+            std::unique_ptr<Window> m_Window;
+            bool m_Running = true;
     };
 
     // To be defined in CLIENT

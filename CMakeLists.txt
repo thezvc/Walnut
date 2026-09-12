@@ -10,6 +10,8 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_SOURCE_DIR}/bin")
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY "${CMAKE_SOURCE_DIR}/bin")
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY "${CMAKE_SOURCE_DIR}/bin")
 
+find_package(glfw3 REQUIRED)
+
 if(CMAKE_CXX_COMPILER_ID MATCHES "Clang|GNU")
     add_compile_options(-Wall -Wextra -Wpedantic)
 elseif(MSVC)
@@ -30,6 +32,9 @@ add_library(Walnut SHARED
     src/Walnut/Events/ApplicationEvent.h
     src/Walnut/Events/KeyEvent.h
     src/Walnut/Events/MouseEvent.h
+    src/Walnut/Window.h
+    src/Walnut/Platform/WindowsWindow.h
+    src/Walnut/Platform/WindowsWindow.cpp
 )
 
 target_precompile_headers(Walnut PRIVATE src/wnpch.h)
@@ -39,6 +44,8 @@ target_include_directories(Walnut
         src
         vendor/include
 )
+
+target_link_libraries(Walnut PUBLIC glfw)
 
 target_compile_definitions(Walnut
     PUBLIC

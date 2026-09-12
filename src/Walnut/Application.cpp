@@ -3,12 +3,13 @@
 
 #include "Walnut/Log.h"
 #include "Walnut/Events/ApplicationEvent.h"
+#include <memory>
 
 namespace Walnut {
 
     Application::Application()
     {
-
+        m_Window = std::unique_ptr<Window>(Window::Create());
     }
 
     Application::~Application()
@@ -17,16 +18,9 @@ namespace Walnut {
     }
 
     void Application::Run() {
-        WindowResizeEvent e(1280, 720);
-		if (e.IsInCategory(EventCategoryApplication))
-		{
-		    WN_TRACE(e);
-		}
-		if (e.IsInCategory(EventCategoryInput))
-		{
-			WN_TRACE(e);
-		}
-        while(true);
+        while(m_Running) {
+            m_Window->OnUpdate();
+        }
     }
 
 }
